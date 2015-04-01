@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.cars_title{
+	text-align: center;
+}
+.cars_list{
+	margin-left: 0 auto;
+	position: absolute;
+	margin-left: 10%;
+}
