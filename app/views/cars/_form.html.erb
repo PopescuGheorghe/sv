@@ -10,20 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :color %>
+<div class="row">
+<div class="col-xs-4 col-md-4">
+  <div class="form-group">
+    <%= f.label :color%><br>
+    <%= f.text_field :color, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="control-group">
     <%= f.label :hp %><br>
-    <%= f.number_field :hp %>
+    <%= f.number_field :hp, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="control-group">
     <%= f.label :model %><br>
-    <%= f.text_field :model %>
+    <%= f.text_field :model, class: "form-control"%>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+  </div>
+  </div>
+
 <% end %>
