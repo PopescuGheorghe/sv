@@ -58,5 +58,15 @@
   <%= @car.model %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @car.price %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @car.stock %>
+</p>
+
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

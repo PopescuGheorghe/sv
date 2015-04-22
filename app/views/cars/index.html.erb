@@ -47,6 +47,8 @@
       <th>Color</th>
       <th>Hp</th>
       <th>Model</th>
+      <th>Price</th>
+      <th>Stock</th>
       <th colspan="1"></th>
       <th> Actions </th>
     </tr>
@@ -58,6 +60,8 @@
         <td class="col-md-1"><%= car.color %></td>
         <td class="col-md-1"><%= car.hp %></td>
         <td class="col-md-1"><%= car.model %></td>
+        <td class="col-md-1"><%= car.price %></td>
+        <td class="col-md-1"><%= car.stock %></td>
           <td class="col-md-1"><%= link_to 'Show', car, :class => "" %></td>
           <td class="col-md-1"><%= link_to 'Edit', edit_car_path(car), :class => "" %></td>
          <td class="col-md-1"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => "" %></td>
@@ -66,6 +70,7 @@
   </tbody>
 </table>
 <br>
+<%= @most_expe.model%>
 <%= link_to 'New Car', new_car_path ,:class => "btn btn-default"%>
 </div>
 </div>
