@@ -1,0 +1,2 @@
+Variables that start with the @ sign, called instance variables, are automatically available in the views
+
