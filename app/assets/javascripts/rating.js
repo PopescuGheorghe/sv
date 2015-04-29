@@ -14,7 +14,7 @@ $( document ).ready(function() {
    click: function(score, evt) {
     $.ajax({
       url: '/ratings/' + $(this).data("car-id"),
-      type: 'CREATE',
+      type: 'POST',
       data: { score: score }
     }).done(function (data){});
   }
