@@ -6,6 +6,9 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
     @most_expe = Car.most_expensive
+   
+   
+
   end
 
   # GET /cars/1

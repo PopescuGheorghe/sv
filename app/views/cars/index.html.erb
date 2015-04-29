@@ -18,61 +18,74 @@
         <li><a href="#">About</a></li>
 
       </ul>
-        </li>
-      </ul>
+    </li>
+  </ul>
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <p class="navbar-text pull-right">
+    <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>
 <body>
-<div class="row">
-<div class=".col-xs-6 .col-md-4">
-<p id="notice"><%= notice %></p>
-<div class="cars_title">
-<h1>Listing Cars</h1>
-</div>
-<div class="cars_list">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Color</th>
-      <th>Hp</th>
-      <th>Model</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th colspan="1"></th>
-      <th> Actions </th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class=".col-xs-6 .col-md-4">
+      <p id="notice"><%= notice %></p>
+      <div class="cars_title">
+        <h1>Listing Cars</h1>
+      </div>
+      <div class="cars_list">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Color</th>
+              <th>Hp</th>
+              <th>Model</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Average Rating </th>
+              <th> Your Rating </th>
+              <th colspan="1"></th>
+              <th> Actions </th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td class="col-md-1"><%= car.color %></td>
-        <td class="col-md-1"><%= car.hp %></td>
-        <td class="col-md-1"><%= car.model %></td>
-        <td class="col-md-1"><%= car.price %></td>
-        <td class="col-md-1"><%= car.stock %></td>
-          <td class="col-md-1"><%= link_to 'Show', car, :class => "" %></td>
-          <td class="col-md-1"><%= link_to 'Edit', edit_car_path(car), :class => "" %></td>
-         <td class="col-md-1"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => "" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= @most_expe.model%>
-<%= link_to 'New Car', new_car_path ,:class => "btn btn-default"%>
-</div>
-</div>
+          <tbody>
+            <% @cars.each do |car| %>
+            <tr>
+              <td class="col-md-1"><%= car.color %></td>
+              <td class="col-md-1"><%= car.hp %></td>
+              <td class="col-md-1"><%= car.model %></td>
+              <td class="col-md-1"><%= car.price %></td>
+              <td class="col-md-1"><%= car.stock %></td>
+              <td>
+               <!--  <p>Averate rating</p> -->
+               <div class="star" data-average-rating = "<%= car.average_rating %>"></div>
+             </td>
+             <td>
+              <!--   <p>Your rating</p> -->
+              <div class="user_star" data-car-id = "<%= car.id %>"></div>
+            </td>
+            <td class="col-md-1"><%= link_to 'Show', car, :class => "" %></td>
+            <td class="col-md-1"><%= link_to 'Edit', edit_car_path(car), :class => "" %></td>
+            <td class="col-md-1"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => "" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <p>Most expensive car:</p>
+      <%= @most_expe.model%>
+      <br>
+      <br>
+      <%= link_to 'New Car', new_car_path ,:class => "btn btn-default"%>
+    </div>
+  </div>
 </div>
 <body>
