@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 		@user = user
 		@url = 'http://exmaple.com'
 		mail(to: user,
-			subject: "hello")
+			subject: "Hello ! This is an automated mail")
 
 	end
 end
