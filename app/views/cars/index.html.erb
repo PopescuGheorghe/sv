@@ -45,26 +45,31 @@
         <table class="table">
           <thead>
             <tr>
+               <th colspan="1"></th>
               <th>Color</th>
               <th>Hp</th>
               <th>Model</th>
               <th>Price</th>
               <th>Stock</th>
+       
               <th>Average Rating </th>
               <th> Your Rating </th>
               <th colspan="1"></th>
               <th> Actions </th>
+
             </tr>
           </thead>
 
           <tbody>
             <% @cars.each do |car| %>
             <tr>
+             <td class="col-md-1"> <%= image_tag(car.photo_url(:thumb)) if car.photo? %></td> 
               <td class="col-md-1"><%= car.color %></td>
               <td class="col-md-1"><%= car.hp %></td>
               <td class="col-md-1"><%= car.model %></td>
               <td class="col-md-1"><%= car.price %></td>
               <td class="col-md-1"><%= car.stock %></td>
+             
               <td>
                <!--  <p>Averate rating</p> -->
                <div class="star" data-average-rating = "<%= car.average_rating %>"></div>

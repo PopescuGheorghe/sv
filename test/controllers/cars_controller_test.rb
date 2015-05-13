@@ -1,3 +1,5 @@
+# @class CarsControllerTest
+
 require 'test_helper'
 
 class CarsControllerTest < ActionController::TestCase

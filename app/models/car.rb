@@ -5,6 +5,8 @@ class Car < ActiveRecord::Base
 	validates :price, numericality: {greather_than: 0} 
 	validates :stock, numericality: true
 
+	mount_uploader :photo, ImageUploader
+
 	def total_value
 		price * stock
 	end

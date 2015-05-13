@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 
+#image upload
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'graphicsmagick'
 #devise
 gem 'devise'
 # Use ActiveModel has_secure_password

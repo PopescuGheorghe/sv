@@ -67,6 +67,11 @@
   <strong>Stock:</strong>
   <%= @car.stock %>
 </p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@car.photo_url) if @car.photo? %>
+</p>
+
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>
